@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block subtitle %}{{ bundle.display_name }}{% endblock %}
+{% block content %}
+<div class="grid grid-cols-12 gap-6">
+  <!-- Main column -->
+  <div class="col-span-12 lg:col-span-9 space-y-6">
+
+    <!-- Hero -->
+    <section id="hero" class="bg-surface border border-line rounded-lg p-8 text-center">
+      <div class="text-xs uppercase tracking-widest text-muted">Q&A 透明度評分</div>
+      <div class="font-serif text-6xl text-ink mt-2">{{ bundle.transparency|round|int }}<span class="text-2xl text-muted"> / 100</span></div>
+      <div class="mt-4 inline-block text-xs px-3 py-1 rounded-full {% if bundle.tone_pill.variant == 'stable' %}bg-accent-soft text-accent{% else %}bg-risk-evasive-bg text-risk-evasive-ink{% endif %}">
+        {{ bundle.tone_pill.text }}
+      </div>
+    </section>
+
+    <!-- Radar + Insights -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div id="radar" class="bg-surface border border-line rounded-lg p-5">
+        <div class="text-xs uppercase tracking-widest text-muted">雷達圖</div>
+        <canvas id="radar-canvas" class="mt-3" height="240"></canvas>
+      </div>
+      <div id="insights" class="bg-surface border border-line rounded-lg p-5">
+        <div class="text-xs uppercase tracking-widest text-muted mb-3">投資洞察</div>
+        {% include "partials/insights.html" %}
+      </div>
+    </section>
+
+    <!-- Q&A table -->
+    <section id="qna" class="bg-surface border border-line rounded-lg overflow-hidden">
+      <div class="text-xs uppercase tracking-widest text-muted px-5 pt-4">Q&A 摘要表</div>
+      <table class="w-full text-sm mt-2">
+        <thead class="text-muted text-xs uppercase tracking-widest">
+          <tr class="border-b border-line">
+            <th class="text-left px-5 py-2 w-10">#</th>
+            <th class="text-left px-5 py-2">分析師問題</th>
+            <th class="text-left px-5 py-2">管理層回答</th>
+            <th class="text-left px-5 py-2 w-28">風險標籤</th>
+            <th class="text-left px-5 py-2 w-16">分數</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in bundle.qna_rows %}
+          <tr id="qna-{{ row.index }}" class="border-b border-line align-top">
+            <td class="px-5 py-3 text-muted">{{ row.index }}</td>
+            <td class="px-5 py-3 max-w-md">{{ row.question_translated or row.question }}</td>
+            <td class="px-5 py-3 max-w-md">{{ row.answer_translated or row.answer }}</td>
+            <td class="px-5 py-3"><span class="text-xs px-2 py-0.5 rounded-full {{ row.risk_label_class }}">{{ row.risk_label_zh }}</span></td>
+            <td class="px-5 py-3 font-serif text-ink">{{ row.composite_score }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <!-- Chat sidebar -->
+  <aside class="col-span-12 lg:col-span-3 sticky top-4 self-start">
+    <div class="bg-surface border border-line rounded-lg p-4 flex flex-col h-[calc(100vh-6rem)]">
+      <div class="text-xs uppercase tracking-widest text-muted">GEMINI 智能問答</div>
+      <div id="chat-log" class="flex-1 mt-3 space-y-2 overflow-y-auto text-sm"></div>
+      <form id="chat-form" data-case="{{ bundle.slug }}" class="mt-3 flex gap-2">
+        <input type="text" id="chat-input" placeholder="輸入後續問題…" class="flex-1 px-3 py-2 border border-line rounded text-sm">
+        <button class="bg-ink text-white px-3 py-2 rounded text-sm">送出</button>
+      </form>
+    </div>
+  </aside>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/chart.umd.js"></script>
+<script>
+const radarData = {{ radar_json|safe }};
+const ctx = document.getElementById('radar-canvas').getContext('2d');
+new Chart(ctx, {
+  type: 'radar',
+  data: {
+    labels: Object.keys(radarData),
+    datasets: [{
+      data: Object.values(radarData),
+      borderColor: '#1d4ed8', backgroundColor: 'rgba(29,78,216,0.15)',
+      pointBackgroundColor: '#1d4ed8',
+    }],
+  },
+  options: {
+    scales: { r: { min: 0, max: 100, ticks: { stepSize: 25, color: '#6b7693' }, grid: { color: '#e2e8f2' }, angleLines: { color: '#e2e8f2' } } },
+    plugins: { legend: { display: false } },
+  },
+});
+</script>
+<script src="/static/app.js"></script>
+{% endblock %}

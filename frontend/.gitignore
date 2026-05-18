@@ -1,0 +1,29 @@
+# Virtualenv
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Env / secrets
+.env
+
+# Runtime cache
+data/cache/
+
+# Build / IDE
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.DS_Store
+.idea/
+.vscode/
+
+# Tailwind build toolchain (output static/tailwind.css IS committed)
+node_modules/
+package-lock.json
+
+# Setuptools editable-install artifacts
+*.egg-info/
+build/
+dist/

@@ -1,0 +1,22 @@
+<table class="w-full text-sm">
+  <thead class="text-muted text-xs uppercase tracking-widest">
+    <tr class="border-b border-line">
+      <th class="text-left px-5 py-2 w-10">#</th>
+      <th class="text-left px-5 py-2">分析師問題</th>
+      <th class="text-left px-5 py-2">管理層回答</th>
+      <th class="text-left px-5 py-2 w-28">風險標籤</th>
+      <th class="text-left px-5 py-2 w-16">分數</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in qna_rows %}
+    <tr id="qna-{{ row.index }}" class="border-b border-line align-top">
+      <td class="px-5 py-3 text-muted">{{ row.index }}</td>
+      <td class="px-5 py-3 max-w-md">{{ row.question_translated or row.question }}</td>
+      <td class="px-5 py-3 max-w-md">{{ row.answer_translated or row.answer }}</td>
+      <td class="px-5 py-3"><span class="text-xs px-2 py-0.5 rounded-full {{ row.risk_label_class }}">{{ row.risk_label_zh }}</span></td>
+      <td class="px-5 py-3 font-serif text-ink">{{ row.composite_score }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

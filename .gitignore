@@ -1,0 +1,68 @@
+# =====================
+# Python
+# =====================
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =====================
+# OS / Editor
+# =====================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# =====================
+# Local Claude Code + brainstorm scaffolding
+# =====================
+.claude/
+.superpowers/
+
+# =====================
+# Secrets — API keys & service configs
+# =====================
+.env
+.env.*
+!.env.example
+config.ini
+
+# =====================
+# Input data — raw transcripts kept local
+# =====================
+*_earnings*.docx
+*earnings call*.docx
+*逐字稿*.docx
+
+# =====================
+# Team output data — kept local
+# =====================
+奕寧_ 摘要&PII/output/
+奕寧_ 摘要&PII/data/
+浩誠_回答品質評分/output/
+瑾慈：情緒分析&關鍵字擷取/sentiment_output/
+瑾慈：情緒分析&關鍵字擷取/keyphrase_output/
+瑾慈：情緒分析&關鍵字擷取/input/
+
+# 恩泓 pre-computed translation/Q&A JSONs
+恩泓_ 逐字稿翻譯和 Q&A 擷取/*_extracted_qna_translation.json
+恩泓_ 逐字稿翻譯和 Q&A 擷取/*_full_transcript_translation.json
+
+# =====================
+# Frontend runtime cache
+# =====================
+frontend/data/cache/
+
+# =====================
+# Build / dependency artifacts
+# =====================
+node_modules/
+dist/
+build/

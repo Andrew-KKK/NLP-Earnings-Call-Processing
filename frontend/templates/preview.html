@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ bundle.display_name }} · 法說會分析儀表板（預覽）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bg: '#f4f6fa', surface: '#ffffff',
+        ink: '#14213d', muted: '#6b7693',
+        line: '#e2e8f2', accent: '#1d4ed8', 'accent-soft': '#e0eaff',
+      },
+      fontFamily: {
+        sans: ['"Noto Sans TC"', 'system-ui', 'sans-serif'],
+        serif: ['"Noto Serif TC"', 'Georgia', 'serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  body { background: #f4f6fa; }
+  .risk-direct  { background:#dceee2; color:#1a5e3c; }
+  .risk-vague   { background:#e0e7ff; color:#2547a8; }
+  .risk-evasive { background:#fbe1e3; color:#9a1f30; }
+  .risk-tone    { background:#e9e3f8; color:#4e3a96; }
+  .scrollable::-webkit-scrollbar { width: 6px; }
+  .scrollable::-webkit-scrollbar-thumb { background: #cbd3e0; border-radius: 3px; }
+</style>
+</head>
+<body class="text-ink font-sans antialiased">
+
+<header class="border-b border-line bg-surface sticky top-0 z-10">
+  <div class="max-w-[1400px] mx-auto px-6 h-12 flex items-center gap-3">
+    <span class="font-serif font-bold tracking-wide text-ink text-base">法說會分析</span>
+    <span class="text-muted">·</span>
+    <span class="text-sm text-muted">預覽案例</span>
+    <span class="ml-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-accent-soft text-accent text-xs font-medium">
+      {{ bundle.display_name }} 2026 Q1 ▾
+    </span>
+    <span class="flex-1"></span>
+    <span class="text-xs px-3 py-1.5 rounded-full border border-line text-muted">↑ 上傳逐字稿</span>
+    <span class="text-xs px-3 py-1.5 rounded-full bg-ink text-white">● 對話</span>
+  </div>
+</header>
+
+<div class="max-w-[1400px] mx-auto px-6 py-6">
+  <div class="grid grid-cols-12 gap-6">
+
+    <!-- ===== MAIN COLUMN ===== -->
+    <div class="col-span-12 lg:col-span-9 space-y-6">
+
+      <!-- Hero: Transparency Score + Tone Pill -->
+      <section class="bg-surface border border-line rounded-xl p-8 text-center">
+        <div class="text-[10px] uppercase tracking-[0.18em] text-muted font-medium">Q&A 透明度評分</div>
+        <div class="font-serif text-6xl text-ink mt-2 leading-none tracking-tight">
+          {{ bundle.transparency|round|int }}<span class="text-2xl text-muted font-sans font-light"> / 100</span>
+        </div>
+        <div class="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium
+          {% if bundle.tone_pill.variant == 'stable' %}bg-accent-soft text-accent{% else %}bg-risk-evasive-bg text-risk-evasive-ink{% endif %}">
+          {{ bundle.tone_pill.text }}
+        </div>
+      </section>
+
+      <!-- Row: Radar + Insights -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-surface border border-line rounded-xl p-5">
+          <div class="text-[10px] uppercase tracking-[0.18em] text-muted font-medium mb-3">雷達圖</div>
+          <canvas id="radar-canvas" height="240"></canvas>
+        </div>
+
+        <div class="bg-surface border border-line rounded-xl p-5">
+          <div class="text-[10px] uppercase tracking-[0.18em] text-muted font-medium mb-3">投資洞察</div>
+
+          {% if headline %}
+          <p class="font-serif text-base text-ink leading-relaxed border-l-2 border-accent pl-4 italic mb-4">
+            {{ headline }}
+          </p>
+          {% endif %}
+
+          <div class="text-[10px] uppercase tracking-[0.18em] text-muted font-medium mb-2">需要追蹤的回答</div>
+          {% if worth_tracking %}
+          <ul class="text-sm text-ink space-y-1.5 mb-4">
+            {% for item in worth_tracking %}
+            <li class="leading-relaxed">
+              · <a href="#qna-{{ item.index }}" class="hover:text-accent">{{ item.bullet }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p class="text-sm text-muted mb-4">本場法說會無迴避或語氣轉變訊號。</p>
+          {% endif %}
+
+          <div class="text-[10px] uppercase tracking-[0.18em] text-muted font-medium mb-2">公司資訊揭露風險</div>
+          {% if disclosure_risks %}
+          <ul class="text-sm text-ink space-y-1.5">
+            {% for bullet in disclosure_risks %}
+            <li class="leading-relaxed">· {{ bullet }}</li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p class="text-sm text-muted">未偵測到揭露風險訊號。</p>
+          {% endif %}
+        </div>
+      </section>
+
+      <!-- Q&A Table -->
+      <section class="bg-surface border border-line rounded-xl overflow-hidden">
+        <div class="px-5 pt-4 pb-2 flex items-baseline gap-3">
+          <div class="text-[10px] uppercase tracking-[0.18em] text-muted font-medium">Q&A 摘要表</div>
+          <span class="text-xs text-muted">{{ bundle.qna_rows|length }} 題</span>
+        </div>
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-y border-line text-muted bg-bg/50">
+              <th class="text-left px-5 py-2.5 w-12 text-[10px] uppercase tracking-[0.15em] font-medium">#</th>
+              <th class="text-left px-5 py-2.5 text-[10px] uppercase tracking-[0.15em] font-medium">分析師問題</th>
+              <th class="text-left px-5 py-2.5 text-[10px] uppercase tracking-[0.15em] font-medium">管理層回答</th>
+              <th class="text-left px-5 py-2.5 w-28 text-[10px] uppercase tracking-[0.15em] font-medium">風險標籤</th>
+              <th class="text-left px-5 py-2.5 w-16 text-[10px] uppercase tracking-[0.15em] font-medium">分數</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in bundle.qna_rows %}
+            <tr id="qna-{{ row.index }}" class="border-b border-line align-top hover:bg-bg/40">
+              <td class="px-5 py-3 text-muted font-medium">{{ row.index }}</td>
+              <td class="px-5 py-3 max-w-md text-ink leading-relaxed">{{ row.question_translated or row.question }}</td>
+              <td class="px-5 py-3 max-w-md text-ink leading-relaxed">{{ row.answer_translated or row.answer }}</td>
+              <td class="px-5 py-3">
+                <span class="text-xs px-2.5 py-0.5 rounded-full font-medium {{ row.risk_label_class }}">{{ row.risk_label_zh }}</span>
+              </td>
+              <td class="px-5 py-3 font-serif text-ink text-base font-medium">{{ row.composite_score }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+
+    <!-- ===== CHAT SIDEBAR ===== -->
+    <aside class="col-span-12 lg:col-span-3 sticky top-16 self-start">
+      <div class="bg-surface border border-line rounded-xl p-4 flex flex-col h-[calc(100vh-6rem)]">
+        <div class="text-[10px] uppercase tracking-[0.18em] text-muted font-medium pb-3 border-b border-line">
+          GEMINI 智能問答
+        </div>
+        <div id="chat-log" class="flex-1 mt-3 space-y-2 overflow-y-auto scrollable text-sm">
+          <div class="self-end ml-auto inline-block px-3 py-2 rounded-2xl bg-ink text-white max-w-[85%] text-sm">
+            哪一題的透明度最低？
+          </div>
+          <div class="self-start inline-block px-3 py-2 rounded-2xl bg-accent-soft text-ink max-w-[92%] text-sm leading-relaxed">
+            根據分析，第 1 題（毛利率展望）為 {{ bundle.qna_rows[0].composite_score }} 分。
+            回答使用了「應用很簡單」等較模糊的措辭，且僅涵蓋了問題中約 {{ ((bundle.qna_rows[0]._signals.overlap_ratio or 0) * 100)|round|int }}% 的關鍵字。
+          </div>
+        </div>
+        <form class="mt-3 flex gap-2">
+          <input type="text" placeholder="輸入後續問題…"
+                 class="flex-1 px-3 py-2 border border-line rounded-lg text-sm focus:outline-none focus:border-accent">
+          <button type="button" class="bg-ink text-white px-3 py-2 rounded-lg text-sm font-medium">送出</button>
+        </form>
+        <p class="text-[10px] text-muted mt-2 text-center">預覽模式 · 對話為靜態示意</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <footer class="mt-12 pb-4 text-center text-xs text-muted">
+    法說會分析儀表板 · 預覽 ·
+    <span class="font-mono">{{ bundle.display_name }}</span> ·
+    資料來源：團隊預先計算 JSON
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+<script>
+const radarData = {{ radar_json|safe }};
+const ctx = document.getElementById('radar-canvas').getContext('2d');
+new Chart(ctx, {
+  type: 'radar',
+  data: {
+    labels: Object.keys(radarData),
+    datasets: [{
+      label: '5 維分數',
+      data: Object.values(radarData),
+      borderColor: '#1d4ed8',
+      backgroundColor: 'rgba(29,78,216,0.18)',
+      pointBackgroundColor: '#1d4ed8',
+      pointBorderColor: '#fff',
+      pointHoverRadius: 5,
+      borderWidth: 2,
+    }],
+  },
+  options: {
+    responsive: true,
+    scales: {
+      r: {
+        min: 0, max: 100,
+        ticks: { stepSize: 25, color: '#6b7693', backdropColor: 'transparent', font: { size: 10 } },
+        grid: { color: '#e2e8f2' },
+        angleLines: { color: '#e2e8f2' },
+        pointLabels: { color: '#14213d', font: { size: 12, family: '"Noto Sans TC", sans-serif' } },
+      },
+    },
+    plugins: { legend: { display: false } },
+  },
+});
+</script>
+</body>
+</html>

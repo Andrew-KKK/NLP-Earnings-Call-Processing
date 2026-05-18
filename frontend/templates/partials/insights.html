@@ -1,0 +1,29 @@
+<div class="space-y-4">
+  {% if headline %}
+  <p class="font-serif text-base text-ink leading-relaxed border-l-2 border-accent pl-4">
+    {{ headline }}
+  </p>
+  {% endif %}
+
+  <div class="text-xs uppercase tracking-widest text-muted">需要追蹤的回答</div>
+  {% if worth_tracking %}
+  <ul class="text-sm text-ink space-y-1">
+    {% for item in worth_tracking %}
+    <li>· <a href="#qna-{{ item.index }}" class="hover:text-accent">{{ item.bullet }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="text-sm text-muted">本場法說會無迴避或語氣轉變訊號。</p>
+  {% endif %}
+
+  <div class="text-xs uppercase tracking-widest text-muted pt-2">公司資訊揭露風險</div>
+  {% if disclosure_risks %}
+  <ul class="text-sm text-ink space-y-1">
+    {% for bullet in disclosure_risks %}
+    <li>· {{ bullet }}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="text-sm text-muted">未偵測到揭露風險訊號。</p>
+  {% endif %}
+</div>

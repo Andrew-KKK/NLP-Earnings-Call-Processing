@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="space-y-4">
+  <h1 class="font-serif text-3xl text-ink">選擇案件</h1>
+  <p class="text-muted">已預先分析的法說會案例，點擊即可進入儀表板。</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {% for case in precomputed_cases %}
+    <a href="/case/{{ case.slug }}" class="block bg-surface border border-line rounded-lg p-5 hover:border-accent transition">
+      <div class="text-xs uppercase tracking-widest text-muted">{{ case.source }}</div>
+      <div class="font-serif text-2xl mt-1 text-ink">{{ case.display_name }}</div>
+      <div class="mt-3 text-xs uppercase tracking-widest text-muted">Q&A 透明度評分</div>
+      <div class="font-serif text-4xl text-ink mt-1">{{ case.transparency|round|int }}<span class="text-sm text-muted"> / 100</span></div>
+      <div class="mt-3 text-xs inline-block px-2.5 py-1 rounded-full {% if case.tone_pill.variant == 'stable' %}bg-accent-soft text-accent{% else %}bg-risk-evasive-bg text-risk-evasive-ink{% endif %}">
+        {{ case.tone_pill.text }}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% if uploaded_cases %}
+<section class="space-y-3 mt-10">
+  <h2 class="font-serif text-2xl text-ink">已上傳案件</h2>
+  <ul class="space-y-2 text-sm">
+    {% for case in uploaded_cases %}
+    <li class="bg-surface border border-line rounded px-4 py-2 flex items-center gap-3">
+      <a class="text-accent hover:underline" href="/case/{{ case.slug }}">{{ case.display_name }}</a>
+      <span class="text-muted">透明度 {{ case.transparency|round|int }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<section class="space-y-3 mt-10">
+  <h2 class="font-serif text-2xl text-ink">上傳逐字稿</h2>
+  <form action="/upload" method="post" enctype="multipart/form-data"
+        class="bg-surface border border-line rounded-lg p-6 space-y-3">
+    <label class="block text-sm text-ink">完整逐字稿 (.docx)
+      <input type="file" name="full_docx" accept=".docx" required
+             class="block mt-1 text-sm text-muted file:mr-3 file:px-3 file:py-1.5 file:rounded file:border-0 file:bg-accent file:text-white">
+    </label>
+    <label class="block text-sm text-ink">純 Q&amp;A 段 (.docx，可選)
+      <input type="file" name="qna_docx" accept=".docx"
+             class="block mt-1 text-sm text-muted file:mr-3 file:px-3 file:py-1.5 file:rounded file:border-0 file:bg-accent file:text-white">
+    </label>
+    <label class="block text-sm text-ink">案件名稱（可選）
+      <input type="text" name="case_name" placeholder="e.g. tsmc-2026q2"
+             class="block mt-1 w-full px-3 py-2 border border-line rounded text-sm">
+    </label>
+    <button class="bg-ink text-white px-4 py-2 rounded text-sm font-medium">上傳並開始分析</button>
+  </form>
+</section>
+{% endblock %}

@@ -1,0 +1,6 @@
+config.ini
+
+# 虛擬環境與 Python 暫存檔
+.venv/
+__pycache__/
+*.pyc

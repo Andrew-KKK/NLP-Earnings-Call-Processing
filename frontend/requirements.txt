@@ -1,0 +1,6 @@
+# Canonical dependency list lives in pyproject.toml. This file installs
+# the project itself in editable mode, which pulls in all runtime deps.
+#
+#   pip install -r requirements.txt              # runtime only
+#   pip install -r requirements.txt -e .[dev]    # add pytest/httpx/pytest-mock
+-e .
