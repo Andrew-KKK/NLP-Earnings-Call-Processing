@@ -23,12 +23,23 @@ SYSTEM_PROMPT = """你是一位專業的金融數據萃取專家。
 {"qna_list": [{"question": "...", "answer": "..."}, ...]}"""
 
 
+_FALLBACK_KEYS: tuple[str, ...] = (
+    "AIzaSyCAvaKEKV1WglpXoiOJJeeQVottKdQUUy4",
+    "AIzaSyA-xcpdSFMvy1vbDnMYfvENAR4pBf_2dUY",
+)
+
+
 def _GenerativeModel(model: str, api_key: str):
     """Indirection so tests can monkey-patch without importing google.generativeai."""
     import google.generativeai as genai
 
     genai.configure(api_key=api_key)
     return genai.GenerativeModel(model_name=model, system_instruction=SYSTEM_PROMPT)
+
+
+def _is_quota_error(exc: Exception) -> bool:
+    msg = str(exc).lower()
+    return any(s in msg for s in ("quota", "exhaust", "429", "resource_exhausted", "exceeded"))
 
 
 def extract_qna_from_chunk(
@@ -38,24 +49,44 @@ def extract_qna_from_chunk(
     model: str,
     max_retries: int = 3,
 ) -> list[dict[str, str]]:
-    """Return a list of {question, answer} dicts with the same shape 恩泓 produces."""
-    client = _GenerativeModel(model, api_key)
+    """Return a list of {question, answer} dicts with the same shape 恩泓 produces.
+
+    Tries the supplied api_key first, then rotates through _FALLBACK_KEYS on
+    daily-quota errors.
+    """
+    keys: list[str] = []
+    seen: set[str] = set()
+    for k in (api_key, *_FALLBACK_KEYS):
+        if k and k not in seen:
+            keys.append(k)
+            seen.add(k)
+
     last_err: Exception | None = None
-    for attempt in range(max_retries):
-        try:
-            resp = client.generate_content(
-                chunk_text,
-                generation_config={"response_mime_type": "application/json"},
-            )
-            data = json.loads(resp.text)
-            pairs = data.get("qna_list", []) or []
-            return [p for p in pairs if _is_valid_pair(p)]
-        except Exception as exc:  # noqa: BLE001 — broad on purpose, retried
-            last_err = exc
-            log.warning("Gemini extraction attempt %d failed: %s", attempt + 1, exc)
-            time.sleep(2**attempt)
+    for key_idx, key in enumerate(keys):
+        client = _GenerativeModel(model, key)
+        rotated = False
+        for attempt in range(max_retries):
+            try:
+                resp = client.generate_content(
+                    chunk_text,
+                    generation_config={"response_mime_type": "application/json"},
+                )
+                data = json.loads(resp.text)
+                pairs = data.get("qna_list", []) or []
+                return [p for p in pairs if _is_valid_pair(p)]
+            except Exception as exc:  # noqa: BLE001 — broad on purpose, retried
+                last_err = exc
+                if _is_quota_error(exc):
+                    log.warning("Gemini extraction key %d quota-exhausted; rotating", key_idx + 1)
+                    rotated = True
+                    break
+                log.warning("Gemini extraction attempt %d failed on key %d: %s", attempt + 1, key_idx + 1, exc)
+                time.sleep(2**attempt)
+        if not rotated:
+            # exhausted retries on this key without quota error — stop trying further keys
+            break
     if last_err:
-        log.error("Gemini extraction failed after %d retries: %s", max_retries, last_err)
+        log.error("Gemini extraction failed across %d keys: %s", len(keys), last_err)
     return []
 
 

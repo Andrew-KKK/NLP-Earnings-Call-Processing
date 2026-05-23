@@ -1,0 +1,401 @@
+TRANSCRIPT
+
+2317.TW – Q4 2025 Hon Hai Precision Industry Co., Ltd Investor Conference Call EVENT DATE/TIME: March 16, 2026 Taipei time 3:00 P.M. (New York: March 16, 3:00 A.M. / London: March 16, 7:00 A.M.)
+
+Investor Conference Call on FY25 Fourth Quarter Financial Results
+
+Corporate Participants
+
+Young Liu Hon Hai Technology Group – Chairman David Huang Hon Hai Technology Group – CFO James Wu Hon Hai Technology Group – Spokesperson Kristen Fang Hon Hai Technology Group – Senior IR Manager Conference Call Participants
+
+Robert Cheng Bank of America - Analyst Angela Hsiang KGI Securities - Analyst Sheng Cheng Daiwa Securities - Analyst Avery Liu SETN - Reporter Dylan Hou Commercial Times - Reporter Sharon Shih Morgan Stanley - Analyst
+
+Presentation
+
+Kristen Fang Hon Hai Technology Group – Senior IR Manager Hello to all the investors and media. This is Kristen. Welcome to Hon Hai’s (“Foxconn”) Fourth Quarter 2025 Investor Conference Call. Joining us today, are Chairman and CEO Young Liu, CFO David Huang, and Spokesperson James Wu. The conference call is scheduled for one hour, starting with our presentation, followed by Q&A session.
+
+As usual, please carefully read the safe harbor notice on the next page before we start the meeting.
+
+We will now proceed to the first session, the presentation, which will cover four topics, including performance review of the fourth quarter of 2025 and full year 2025, business outlook for the first quarter of 2026 as well as full year 2026, key business developments and recent major events.
+
+I will now hand over the floor to CFO David to walk through Foxconn’s financial performance for 2025.
+
+David Huang Hon Hai Technology Group – CFO Thank you, Kristen. Hello everyone. I am David Huang, CFO. I am going to start with some highlights on Foxconn’s financial results for the fourth quarter of 2025.
+
+Firstly, please refer to page 5 of the presentation for the 2025 fourth quarter income statement.
+
+Revenue for the fourth quarter reached NT$2.61 trillion, representing a 22% increase YoY and marking a record high for the same period in our history. In USD terms, revenue increased approximately 26% YoY.
+
+In terms of our three key profitability metrics: gross margin was 5.88%, down 0.27 ppts YoY, mainly due to changes in product mix. In particular, the increased share of server products under the buy and sell model also had some impact on gross margin.
+
+Operating margin was 3.28%, a YoY increase of 0.26 ppts, mainly benefiting from revenue scale expansion that lowered the overall expense ratio. Although selling and R&D expenses increased slightly with business expansion, the overall expense ratio declined by approximately 0.53 percentage points.
+
+Net profit margin was 1.73%, a YoY decrease of 0.44 ppts, primarily due to higher income tax expenses. This was mainly related to planning for the repatriation of profits from subsidiaries.
+
+In terms of non-operating items, non-operating losses totaled NT$3.3 billion, a decrease of NT$2.1 billion YoY, mainly due to lower net interest income. As revenue increased significantly, working capital requirements rose, while deposit interest rates declined more than borrowing rates.
+
+EPS for 4Q25 was NT$3.23, a decrease of NT$0.11 YoY.
+
+Next, look at page 6 for a review of the full-year 2025 income statement.
+
+Overall, 2025 was a year in which both scale and profitability continued to grow simultaneously. Foxconn delivered strong operating performance throughout the year, with several key financial indicators reaching record highs.
+
+Full-year revenue was NT$8.1 trillion, operating income was NT$259.2 billion, and net profit was NT$189.4 billion. All these figures reached historical highs.
+
+Full-year EPS was NT$13.61, the highest since the company was listed. This also marks the fifth consecutive year in which annual earnings exceeded one share of capital.
+
+Next, let’s look at our profitability ratios.
+
+Gross margin was 6.15%, down 0.11 ppts YoY, mainly affected by product mix differences and the appreciation of the New Taiwan Dollar against the US Dollar.
+
+Operating margin was 3.2%, up 0.27 ppts YoY, primarily due to improved expense efficiency. While revenue increased 18% YoY, expenses rose only 5%, resulting in operating margin expansion.
+
+Net profit margin was 2.34%, up 0.11 ppts YoY, mainly driven by equity-method investment gains, a recovery in SHARP’s profitability, and higher valuation gains from fund investments.
+
+At the same time, the effective tax rate increased compared to previous years. This was mainly due to the implementation of CFC (Controlled Foreign Corporation) regulations and
+
+the Pillar Two global minimum tax regime, as well as the repatriation of subsidiary earnings.
+
+Return on equity (ROE) reached 11.25%, up 1.55 ppts YoY, demonstrating that while operating scale continues to grow, we are also improving capital efficiency to generate higher returns for shareholders.
+
+Following this, please refer to page 7 of the presentation for the balance sheet.
+
+As of the end of December 2025, cash and cash equivalents plus time deposits totaled NT$1.58 trillion. Net cash was NT$339.1 billion, down NT$41.7 billion YoY. This decline was mainly due to the expansion of operating scale and higher working capital requirements. However, compared with the third quarter of 2025, net cash increased by NT$248 billion, mainly due to higher accounts receivable factorings.
+
+Cash conversion cycle for the fourth quarter was 35 days, a decrease of 3 days YoY.
+
+The debt ratio was 61%, slightly higher than the same period last year but lower than the previous quarter. This was mainly due to higher working capital requirements driven by revenue growth, which resulted in an increase in short-term borrowings.
+
+Finally, please refer to the cashflow statement on page 8.
+
+For full-year 2025, cash inflow from operating activities was NT$226.9 billion, an increase of NT$60.8 billion YoY, mainly driven by growth in operating profits. Free cash flow recorded a net inflow of NT$53.1 billion. Capital expenditures for the year were NT$173.8 billion, representing a 27% increase YoY, in line with our expansion plans.
+
+Here I conclude the summary of the financial statements for Q4 2025 and full-year 2025. Now, I would like to turn the call over to Chairman Liu.
+
+Young Liu Hon Hai Technology Group – Chairman and CEO Thank you, David. Hello, everyone. This is our first investor conference of the year. Given the rapidly changing geopolitical and economic environment, I believe this is a good opportunity to share our outlook for Foxconn in the year ahead.
+
+As the CFO just reported, both our fourth-quarter and full-year revenues reached record highs, and performance exceeded expectations with strong growth.
+
+Looking at the four major product segments in the fourth quarter, Cloud and Networking Products, Computing Products, Components and Other Products all performed better than expected on a quarter-over-quarter basis.
+
+From a product mix perspective, even during the traditional peak season for ICT products, Cloud and Networking Products revenue surpassed Smart Consumer Electronics for the first time, becoming the largest contributor to revenue.
+
+You may have noticed that in our presentation, we have adjusted the order of the segments accordingly, placing Cloud and Networking Products first based on their contribution.
+
+For Foxconn, 2025 was a year of AI-driven transformation and steady growth. Our full-year operating performance exceeded previous expectations, with group revenue reaching NT$8.1 trillion, once again setting a new historical record.
+
+Across our major product segments, Cloud and Networking Products and Components and Other Products showed strong growth momentum. Smart Consumer Electronics and Computing Products remained stable. Together, these segments significantly boosted the Group’s overall revenue.
+
+On the profitability side, both operating income and net profit reached record highs, and EPS reached NT$13.61, the best performance since the company was listed.
+
+These achievements were made possible by the dedication and hard work of our global teams over the past year. Despite a challenging and rapidly changing market environment, everyone remained fully committed and demonstrated Foxconn’s long-standing execution capability and resilience.
+
+I would also like to take this opportunity to thank all of our shareholders, customers, and partners for their continued support and trust, which enables Foxconn to continue moving forward steadily.
+
+From a product mix perspective, the share of Cloud and Networking Products has increased rapidly due to strong demand for AI servers. In 2023, the segment accounted for about 22% of revenue. In 2024, it increased to approximately 30%. Last year, it reached around 40%, becoming the largest contributing product category.
+
+Next, I will address the company’s outlook for the full year 2026.
+
+Over the past few months, we have seen notable changes in tariffs, geopolitical conditions, and global monetary policy. However, driven by the strong growth of AI servers, we believe that 2026 will still be a very positive year, and we expect strong growth for the full year.
+
+First, for Cloud and Networking Products, AI will remain the most important growth driver. We are observing that capital expenditures from major CSPs are expanding at an unprecedented pace. As the world’s largest AI server provider, we are well positioned to capture these opportunities. As production capacity continues to ramp up, AI servers are expected to maintain strong growth. We also remain optimistic about general servers, as AI will continue to drive increased demand for storage and computing capacity expansion.
+
+For networking products, the high-speed switch business has achieved multiple-fold growth for two consecutive years. Our diversified product portfolio can fully support the interconnection requirements of AI datacenter, and we expect networking products to accelerate their growth. Overall, Cloud and Networking Products are expected to maintain strong growth this year.
+
+For Smart Consumer Electronics, the market has expressed concerns regarding memory shortages and rising prices. However, since our product mix is primarily focused on higher- end models, the impact so far has been relatively limited. As a result, underlying demand has not changed, and overall visibility is gradually improving. We, therefore, expect significant growth in this segment this year.
+
+For Computing Products, due to tight memory supply and relatively moderate PC demand, the PC industry is facing certain challenges. As a result, we expect this segment to decline slightly this year.
+
+For Components and Other Products, although we continue to increase our CMM supply, most of these transactions occur internally within the Group, with relatively limited impact on revenue recognition. Therefore, we expect full-year performance in this segment to remain roughly flattish.
+
+Looking at the outlook for the first quarter of 2026, AI demand continues to ramp up. Overall, we expect first-quarter revenue performance to exceed the seasonal patterns of the past five years, and to achieve strong YoY growth.
+
+Looking at the four product segments: for Cloud and Networking Products, AI server mass production capacity continues to increase, and we expect strong YoY growth. In order to
+
+optimize capital utilization, we have shifted part of our server transaction model from buy and sell to a consignment model. As a result, this segment may appear roughly flat sequentially in the first quarter. However, if we were to adjust for the change in transaction model, the segment would still show significant growth.
+
+For Smart Consumer Electronics, shipment momentum this year has been better than expected. Combined with the launch of new products in the first quarter, we expect this segment to show significant YoY growth.
+
+Although new products have been launched in the first quarter, PC demand remains relatively moderate. Therefore, Computing Products are expected to decline slightly both QoQ and YoY.
+
+For Components and Other Products, shipments of key components including camera modules and connectors will increase in the first quarter. As a result, this segment is expected to show significant YoY growth.
+
+From a medium to long-term perspective, we believe the Group’s growth roadmap over the next several years will become increasingly clear. Historically, we have successfully captured every major wave of industry growth. When one industry begins to mature, we are already prepared to enter the next emerging industry. This pattern can be seen in our evolution from PCs to smartphones, to servers, and now, to AI datacenter.
+
+That said, the EV outsourcing breaking point has appeared somewhat later than we originally expected. This delay is mainly due to changes in environmental policies in different countries as well as stronger-than-expected financial resources among traditional automakers. However, we have already established our CDMS (Contract Design and Manufacturing Service) business model, and we are well prepared for the industry’s transition. Several collaborative projects are currently underway, and we believe that more concrete results will become visible in the second half of this year. In the near future, the EV business will become the Group’s third major growth pillar. At the same time, we are also investing in promising industries such as robotics and the space sector.
+
+Looking back at our historical growth, the key reason we are able to seize these opportunities and become the preferred partner for customers launching new products lies in the five core values we provide to our clients.
+
+Today I would like to highlight these five values again, as they remain critical both to
+
+Foxconn and its customers. Through these five pillars, we help customers accelerate time- to-market, time-to-cost, and time-to-technology, and build highly competitive products.
+
+From an operational perspective, we are accelerating our transformation into a technology manufacturing platform service provider. We are expanding investments in key technologies, including electric vehicles, artificial intelligence, semiconductors, robotics, and next-generation communications. At the same time, we are building a complete value chain across our three smart platforms: Smart Manufacturing, Smart EV, and Smart City. These efforts will further enhance our long-term profitability.
+
+Foxconn has always set EPS maximization as one of our core goals. As AI servers grow rapidly, we are ensuring that each AI server product contributes not only to revenue growth but also to overall profitability.
+
+We understand that profit margins and ROE are key financial metrics closely watched by investors. Today, our Board of Directors has approved an Enterprise Value Enhancement Plan, in which these financial indicators are included as core commitments to address investors’ expectations for long-term profitability improvements.
+
+Although the buy and sell transaction model for high-value AI servers may temporarily affect gross margin performance, we are confident that through economies of scale, we can maintain operating margins above 3% even as AI server revenue continues to grow.
+
+From an ROE perspective, the company maintained around 9% ROE between 2023 and 2024. As vertical integration of components increases, economies of scale expand, and AI businesses continue to grow, profitability improved further in 2025, with ROE reaching 11.25%, steadily moving toward our 12% target. These achievements are rooted in a fundamental management principle we have always upheld: long-term thinking.
+
+Six years ago, we introduced our three-stage transformation strategy: F1.0 Existing Business Optimization, F2.0 Digital Transformation, and F3.0 Transformation To New Industries. Today, as global industries stand at the starting point of the AI era, the next few years will be a crucial period for Foxconn to consolidate its strategic position. Over the next five years, we will take AI as the core driving force, advancing the Group to becoming a comprehensive world-class enterprise through three transformation strategies: F1.0 Operational Excellence; F2.0 Intelligence-Driven Growth; and F3.0 Platform Value Creation. Our goal is clear. We aim to transform from the world’s most important technology manufacturing partner into the most trusted industrial platform in the AI era.
+
+In terms of sustainability, we have always believed that companies must pursue both EPS and ESG simultaneously in order to achieve long-term and stable development. Therefore, we have already launched the second phase of our long-term sustainability program. Our goal is to maintain top 10% performance in the most important global ESG rankings by 2030.
+
+Over the next five years, Foxconn will implement 34 sustainability initiatives, focusing on advancing low carbon transformation, building a fair and safe workplace, and establishing a responsible supply chain. In addition, through AI-driven data governance, we aim to become a model enterprise for sustainable development.
+
+Next, I will invite James to walk you through the latest developments in our key businesses.
+
+James Wu Hon Hai Technology Group – Spokesperson Thank you, Chairman.
+
+Next, we will walk you through key business developments from several perspectives, including AI, our three smart platforms, and other strategic businesses.
+
+First, within the AI industry value chain, Foxconn’s strong vertical integration capability allows us to lead the development of the most mainstream AI server and rack products. However, we are not positioned merely as a hardware supplier. Rather, we see ourselves as a technology manufacturing platform service provider for AI infrastructure.
+
+Our comprehensive services cover areas such as datacenter, modular datacenter (MDC), and even as Nvidia Cloud Partner (NCP). These capabilities also enable us to capture significant opportunities emerging from sovereign AI initiatives.
+
+Looking specifically at AI servers, demand remains extremely strong. We expect AI rack shipments in the first quarter to grow by a high double-digit percentage QoQ, with AI server revenue also increasing sequentially. We are even more optimistic on the outlook for the full year. Ｗe expect AI rack shipments to at least double in growth for the year.
+
+Next, I would like to outline the core objectives of each business segment, so that everyone can better understand our strategic direction.
+
+For the three smart platforms, our overall objective is to leverage our AI software-hardware integration capabilities to build a cross-industry intelligent ecosystem.
+
+In Smart Manufacturing, our goal is to become a Generative AI platform enterprise. By integrating our Genesis platform with digital twin technologies, we are enabling factories to achieve automated and autonomous decision-making capabilities. At the same time, physical AI robots are accelerating their deployment and scaling across industrial applications.
+
+In Smart EV, our collaboration projects with an automotive partner in the Middle East are continuing to progress, while we are also optimizing autonomous driving technologies as we move toward building an AI-enabled mobility platform.
+
+For Smart City, our objective is to become a city-level AI and data platform provider. On the infrastructure side, we connect downward to computing power resources, while on the application side we provide solutions such as City Agents and Super Apps, creating standardized solutions that can be exported globally. Currently, collaboration projects are underway in Kaohsiung, and abroad in Mexico, and the Philippines.
+
+For the EV business, our core objective is to promote the Contract Design and Manufacturing Service (CDMS) model. We have observed that the global EV market is rapidly approaching an outsourcing breaking point, and we plan to serve OEM customers through this CDMS model.
+
+In overseas markets, our electric bus collaboration with Japanese automakers, as well as the MODEL B vehicle for the Australia and New Zealand markets, are expected to begin in the second half of 2026.
+
+Domestically, Foxtron has strengthened its service ecosystem. Taiwan will serve as a demonstration base, enabling us to support customers while also expanding production capacity to meet future order demand.
+
+The core objective of our robotics business is to build a scalable intelligent robotics platform. For robots to truly enter industrial applications, the key lies in AI perception and decision-making capabilities.
+
+Through our collaboration with NVIDIA, we are leveraging digital twins and teleoperation training to significantly shorten the time required to move robots from development to production deployment.
+
+At this week’s NVIDIA GTC conference, we will showcase a new generation of humanoid robots capable of stable and efficient operation in industrial environments. At the same time, collaborative robots developed for healthcare applications have already achieved integrated voice and perception capabilities. Through these AI-enabled initiatives, we are gradually building cross-industry robotics solutions.
+
+In Digital Health, our goal is to combine the Group’s strengths in AI, precision manufacturing, and robotics to become an important participant in the global smart healthcare industry. We aim to build a complete ecosystem covering testing, diagnosis, and treatment, with three core capabilities: smart healthcare, bioprocess manufacturing, hospital automation.
+
+Many people ask why Foxconn is investing in semiconductors. Our objective is actually very straightforward: to ensure that our products have greater supply stability and differentiation. By developing key semiconductor capabilities, we can ensure stable delivery to customers even during industry supply shortages, thereby strengthening our competitive resilience.
+
+In addition, developing our own chips allows us to select the most suitable and best- performing components, while reducing procurement costs and improving overall profitability.
+
+Currently, we are advancing several key initiatives, including automotive power semiconductors, particularly vertical integration of silicon carbide (SiC) technologies; development of power management ICs required for ICT products; and development of next-generation advanced packaging technologies for AI servers. These initiatives will ensure that Foxconn maintains control over critical technologies in the AI and EV era.
+
+In next-generation communications, our goal is clear. We aim to become the most comprehensive manufacturing partner for satellite constellation service providers. Whether it is ground receiver equipment or satellites, Foxconn aims to provide manufacturing solutions. We are also testing inter-satellite communication technologies, which represent one of the most challenging technical barriers and could become a key competitive advantage.
+
+In summary, across industries ranging from electric vehicles and robotics to low-earth-orbit satellites, Foxconn is not simply developing individual products. Our goal is to build a cross- industry platform connected by AI. By leveraging our key technologies and global manufacturing capabilities, we aim to become an indispensable long-term partner for customers worldwide.
+
+Next, I will briefly highlight some recent major events.
+
+At Hon Hai Tech Day, we announced several new collaborations, including building future AI infrastructure in the United States together with OpenAI, establishing a sovereign AI supercomputing center, Visionbay, in Taiwan, and forming a joint venture with Intrinsic to develop AI robotics factories. In addition, we signed a four-year incentive agreement in Wisconsin, aimed at supporting the growing demand for servers.
+
+In the EV sector, we launched the new MODEL A reference vehicle, designed to meet diverse usage scenarios. The battery technologies developed at our Kaohsiung R&D Center demonstrate our vertical integration capability in one of the most critical EV components. Meanwhile, our joint venture in Saudi Arabia has officially begun construction, with EV charging equipment expected to begin production in the fourth quarter of this year.
+
+Other developments include joint development projects with the Kaohsiung City Government, which will help create new employment opportunities in southern Taiwan, collaboration with multiple partners to develop next-generation medical information systems, and a newly certified World Economic Forum Lighthouse Factory, expanding capacity while achieving sustainability goals.
+
+Foxconn also continues to promote initiatives across multiple areas. Our annual sports- themed employee carnival was successfully held this year. The 2026 Taiwan Foxconn Ladies Golf Tournament was recently completed, with larger prizes and record attendance exceeding 11,000 spectators.
+
+We also sponsored a Taiwan–Japan baseball exchange tournament, and invited 200 employees and their families to attend games in Japan in support of Taiwanese baseball.
+
+In addition, our Shenzhen campus ecological garden project integrates wastewater treatment with environmental beautification.
+
+The Hon Hai Education Foundation continues expanding AI education programs for underserved communities. A sustainability financing agreement was recently completed to support future ESG initiatives. We have also launched a joint laboratory with partners in the United Kingdom to develop new environmental technologies.
+
+Foxconn has also received numerous recognitions, including Top 100 AI Innovation Companies, Healthy Workplace Award, National Sustainability Award, and Sports Promotion Award. Our Investor Relations team has also received multiple industry awards.
+
+Finally, Professor Chang Ching-ray, a Foxconn board member, was selected among the Top 100 in Quantum Technology, highlighting Foxconn’s international influence in quantum research. Professor Mau-Chung Frank Chang, Advisory Board Member of the Hon Hai Research Institute, received one of the highest lifetime achievement honors in engineering.
+
+These recognitions demonstrate our continued commitment to forward-looking research and innovation.
+
+That concludes today’s presentation. Thank you.
+
+Questions and Answers
+
+Kristen Fang Hon Hai Technology Group – Senior IR Manager Thank you, James. Next, we will move to the Q&A session. We’ll go through questions that were raised in advance of today’s call and answer those first. After that, we will open the floor to any questions.
+
+Kristen Fang Hon Hai Technology Group – Senior IR Manager Question 1: The first question is for Chairman Liu. In the presentation, Foxconn expressed a very positive outlook on AI servers this year. Could you share more details on how sustainable this strong growth is and what your market share target in AI servers will be?
+
+Young Liu Hon Hai Technology Group – Chairman Thank you, Kristen. As mentioned earlier, we expect AI rack shipments to at least double in growth for the year, with shipments increasing quarter by quarter throughout the year.
+
+If you look closely at the growth trajectory shown in the presentation, the strong growth of AI is not just a one- or two-year trend, we believe it will continue for several years. This visibility comes from our close partnerships with major North American CSP customers, many of whom have already increased their capital expenditure outlook for this year.
+
+In addition, our participation in sovereign AI projects also provides additional growth opportunities. Several of our key customers expect that within the next two to three years, the global AI industry could reach a market size of US$1 trillion. We are also closely monitoring capital investments from upstream supply chains, where demand is particularly strong, in order to better confirm the actual demand outlook for the AI industry.
+
+Regarding market share, through our long-term and close partnerships with major GPU and ASIC chip suppliers, our AI server market share has already reached around 40%.
+
+With each new generation of products, we have successfully expanded our customer base to include additional CSP clients. We therefore expect that our market share will continue to increase further going forward.
+
+Kristen Fang Hon Hai Technology Group – Senior IR Manager Question 2: Thank you, Chairman. The next question is also related to the operating outlook. You mentioned earlier that 2026 is expected to be a strong year with many growth
+
+opportunities. Could you also share your view on the main challenges and risks facing operations this year, and how the company is preparing to address them?
+
+Young Liu Hon Hai Technology Group – Chairman Thank you, Kristen. From an external perspective, the biggest challenge this year continues to be the global geopolitical and economic environment, particularly the conflicts in the Middle East. Our solution to this challenge is global manufacturing deployment.
+
+As early as five years ago, we anticipated the trend toward regionalized manufacturing in supply chains, and we significantly expanded our global footprint. During this period, the number of our manufacturing sites increased from 133 locations to 241 locations worldwide.
+
+Through this expansion, our diversified production capacity and localized manufacturing capabilities have provided both us and our customers with greater flexibility to respond to unexpected disruptions. We will continue to closely monitor global market developments and work to minimize potential impacts.
+
+Internally, the main challenge lies in whether our GenAI and robotics capabilities can continue to keep pace with the rapid growth of these industries. This is one of the key goals outlined in our next five-year strategic plan. We will therefore allocate significant resources to these two areas to ensure that Foxconn remains one of the leading companies in AI applications.
+
+Kristen Fang Hon Hai Technology Group – Senior IR Manager Question 3: Thank you, Chairman. For those who want to ask questions, you may now click the "raise hand" button. After the next question, we will open the floor for questions from investors and media. The third and final pre-submitted question is for the CFO, regarding the outlook for CAPEX this year, capital allocation plans, and the impact of the buy and sell transaction model on the Group’s ROIC and ROE.
+
+David Huang Hon Hai Technology Group – CFO Thank you, Kristen. First, regarding our 2026 capital expenditure outlook, as our business continues to grow and customer demand increases, you may have noticed that CAPEX spending by our major CSP customers has increased significantly in recent years.
+
+Therefore, we expect that our CAPEX in 2026 could increase by more than 30% compared to in 2025. Capital expenditures will primarily focus on regional manufacturing deployment, automation implementation, and expansion of core production capacity. The overall
+
+investment scale will be aligned with the pace of business growth in order to support the evolving needs of our customers, while maintaining a prudent and disciplined investment approach.
+
+Regarding the buy and sell transaction model, it is true that this model increases working capital requirements, which may impact capital utilization. However, it also helps to expand revenue scale and improve profitability. So, our core objective continues to be maximizing overall profitability while maintaining a reasonable return on capital.
+
+Under the buy and sell model, when product prices increase, the value of inventory and accounts receivable also increases, which raises working capital requirements. To manage this, the Group has established comprehensive receivables management and inventory control mechanisms to mitigate these effects. Going forward, depending on customer requirements, we will flexibly adopt both consignment and buy and sell transaction models to balance capital needs with operational efficiency.
+
+From a capital management perspective, our financial leverage remains better than the industry average. We continue to follow our principle of matching funding maturity with asset duration, making appropriate use of bank credit lines and diversified financing tools to support operational growth.
+
+At the same time, we will also work with customers through pricing mechanisms to share the cost of capital, ensuring that the balance between capital utilization and profit contribution remains reasonable.
+
+Finally, regarding ROE. Although the buy and sell model increases capital investment, if net profit grows faster than shareholders’ equity, it can still contribute to improving ROE. Therefore, when evaluating transaction models, our core principle is to ensure a balanced relationship between capital efficiency and profitability.
+
+Kristen Fang Hon Hai Technology Group – Senior IR Manager Thank you, CFO. Now, we will move to Q&A session for online investors as well as media. English questions are also welcome.
+
+James Wu Hon Hai Technology Group – Spokesperson Our first question comes from Robert from Bank of America, please.
+
+Robert Cheng Bank of America - Analyst
+
+First, congratulations on the strong results for last year. My questions are related to AI, which is clearly the company’s largest growth driver.
+
+My first question concerns standardization of AI server racks. As AI racks become increasingly complex, we are now hearing that major suppliers in the industry are trying to push toward standardized and modular designs. I would like to understand whether this represents a broader industry trend? If yes, how will this affect Foxconn?
+
+My second question relates to the growth of GPU and ASIC. As the Chairman mentioned earlier, AI demand is expected to grow strongly over the next few years, and even on a quarterly basis we are seeing continued expansion. Previously, most discussions focused primarily on GPU systems. I would like to understand your view on ASIC projects and what the main growth drivers might be going forward. Thank you.
+
+Young Liu Hon Hai Technology Group – Chairman Thank you, Robert. In the early stages of any industry’s growth, we typically see different approaches emerging simultaneously. Over time, after a period of competition, the market usually converges toward a limited number of dominant product architectures or design approaches.
+
+As AI racks become increasingly complex, I believe that standardized design will become an inevitable trend. Standardization can significantly shorten the cycle from chip release to system assembly, which in turn accelerates the rollout of AI infrastructure.
+
+For the manufacturing industry, standardized designs have always helped improve production efficiency and shorten manufacturing cycles. As a result, costs decline and volumes increase. Overall, this trend is beneficial for the entire industry. For companies like Foxconn, which possess large-scale manufacturing capacity and a global production footprint, standardization allows us to further improve turnover efficiency and return on capital. As AI server product architectures become more standardized, we believe that industry competition will increasingly concentrate among leading players. And as one of the industry leaders, we expect to benefit from this trend toward both consolidation and standardization.
+
+That said, even if AI racks become more standardized in certain aspects, computing density and power density continue to increase. As a result, liquid cooling solutions are gradually becoming the main configuration. At the same time, key components such as high-
+
+performance computing platforms and advanced cooling technologies are increasing in value, which creates additional value and profit opportunities for the supply chain.
+
+Therefore, through the combination of greater scale enabled by standardization and increasing value of key components, we believe this trend will have a positive impact on our AI market share and profitability structure, given our strong vertical integration capabilities, scale benefits, and global deployments. That addresses your first question.
+
+Regarding your second question on ASIC, earlier we already discussed our overall outlook for AI server shipments and revenue. As for the ratio between GPU and ASIC systems, with US large CSP continuing to expand AI inference applications, trends such as OpenClaw architectures are driving a higher adoption of ASIC servers. We will grow alongside this strong customer demand. Considering the price differences between chips, we estimate that the overall GPU to ASIC market structure will be approximately 80% GPU and 20% ASIC. When we review our own product portfolio, we also see our mix gradually approaching this ratio. Thank you.
+
+James Wu Hon Hai Technology Group – Spokesperson Next question comes from Angela from KGI, please.
+
+Angela Hsiang KGI Securities - Analyst Thank you. I have several questions related to components. First, for 2026 the company expects component revenue to remain relatively flat. Since most components are primarily for internal use and the proportion of components sold externally is limited, are there any other considerations behind this?
+
+Second, vertical integration of AI server components has always been one of the company’s key strengths. As specifications continue to upgrade, including areas such as liquid cooling systems and cables, could management share the current level of in-house manufacturing ratio for these components? How might this change going forward, and are there new component opportunities the company plans to pursue? Finally, could you comment on the expected shipment timeline for the Rubin generation, particularly when shipments are expected to begin? Thank you.
+
+Young Liu Hon Hai Technology Group – Chairman Let me first address the second question. As for your second question on Rubin shipments, I think it would be better for [NVIDIA CEO] Jensen to answer you.
+
+I just came from the GTC exhibition hall earlier and saw many demonstrations as well as our vertically integrated components being displayed there. As we mentioned earlier, many of these components are used internally within our systems, so their value does not necessarily appear directly in our revenue figures. However, the overall shipment volume of these components will continue to increase, which is an objective we are actively pursuing within our CMM business.
+
+For AI racks, we are a core manufacturing and system integration partner for NVIDIA. High- value key subsystems within AI racks, including GPU modules, compute boards, SuperNIC, DPU, switch tray, and compute tray are areas where we have long participated deeply in both design and manufacturing. Many of these will also be showcased at this year’s GTC event.
+
+Going forward, we will continue to increase the level of vertical integration for other key components, allowing us to better serve our CSP customers with more comprehensive solutions. Several related components are already under development and deployment, including CPU, busbar, midplane, as well as liquid cooling components such as manifold, cold plate, and UQD etc. These components have already been gradually introduced into major customer products and are currently in mass production shipments.
+
+As the next generation of AI clusters significantly increases both compute density and power density, the requirements for system reliability and vertical integration capabilities will continue to rise. With our Group’s deep technical expertise accumulated in areas such as precision tooling, mechanical engineering, optics, and electronics integration, we will be able to further increase the level of vertical integration and thereby enhance value per unit and profitability.
+
+Regarding the ratio of internally manufactured versus externally sourced components, we will dynamically adjust this based on customers’ business models and project timelines. Overall, as system architectures become more matured, the proportion of self- manufactured components integrated into systems will continue to increase, and the share of internally supplied liquid cooling components will also gradually rise.
+
+At the same time, in order to maintain supply chain resilience, we will continue to retain a portion of external sourcing. Through large-scale procurement and collaboration with suppliers, we will work together to optimize costs and ensure stable margins and strong bargaining power across the supply chain.
+
+James Wu Hon Hai Technology Group – Spokesperson Next question comes from Sheng from Daiwa, please.
+
+Sheng Cheng Daiwa Securities - Analyst Thank you for taking my question, and congratulations on the company’s strong results over the past two years. My question is related to memory prices. Recently, memory prices have surged significantly. Could management share its view on how these price increases might affect demand for PCs, smartphones, and servers. In the short term, have you observed any pull-in demand or early purchasing behavior due to rising memory prices? As a follow-up question, how might rising memory prices affect the company’s gross margin and operating margin? Thank you.
+
+James Wu Hon Hai Technology Group – Spokesperson We will ask our CFO to answer this question, thank you.
+
+David Huang Hon Hai Technology Group – CFO Fluctuations in memory prices and limited supply may indeed affect shipments of some consumer products. However, so far, we have not observed any panic-driven pull-in demand in the market.
+
+In terms of end-market demand for PCs, smartphones, and AI servers, many of our major customers focus on high-end products with relatively high selling prices. Because of this, their cost structures are relatively resilient, and adjustments in memory prices have not had a significant impact on demand for these high-end products.
+
+Regarding profit margins, Foxconn’s operating objective has always been to maximize profitability, and we are willing to participate in any business segment that offers strong opportunities for profit growth. As the unit price and density of high-performance computing chips continue to rise significantly, profit margins may fluctuate due to changes in the product mix and cost structure.
+
+However, thanks to our advantages in large-scale manufacturing, excellent cost management, increasing vertical integration of key components, and the strengthened CMM business, we remain confident in achieving our operating margin target of at least 3% in 2026. We will continue optimizing our profit structure to create maximum value for shareholders. Thank you.
+
+James Wu Hon Hai Technology Group – Spokesperson Next question comes from Avery from SETN, please.
+
+Avery Liu SETN - Reporter Question: Hello Chairman, James, and CFO. Congratulations on Foxconn achieving record- high revenue last year. On behalf of the company’s million shareholders, I would like to ask a question that investors are very interested in: what will the dividend be this year? Could you perhaps give us a preview?
+
+James Wu Hon Hai Technology Group – Spokesperson We will also ask our CFO to answer this question, thank you.
+
+David Huang Hon Hai Technology Group – CFO Thank you for the question, and thank you to all our shareholders for your long-term support.
+
+In 2019, Foxconn announced that the company would maintain a cash dividend payout ratio of no less than 40%. In fact, since announcing that policy, our actual payout ratio has exceeded 50% for the past six years, reflecting our commitment to sharing operating results with shareholders.
+
+Last year, the Group reported EPS of NT$13.61, which is the highest since the company was listed. When the Board of Directors reviewed the dividend proposal today, it considered both the company’s future development needs and shareholder returns.
+
+The board, therefore, resolved to propose a cash dividend of NT$7.2 per share this year, which is higher than last year’s NT$5.8 per share. This represents a payout ratio of 52.9%, marking the seventh consecutive year with a payout ratio above 50%, and slightly higher than last year.
+
+We firmly believe that continuously improving profitability and EPS is the best way to ensure that shareholders receive stable and sustainable cash returns as the company grows. Going forward, while maintaining the balance between long-term corporate development and shareholder returns, we will continue to share the company’s operating results with our shareholders. Thank you.
+
+James Wu Hon Hai Technology Group – Spokesperson Next question comes from Dylan from Commercial Times, please.
+
+Dylan Hou Commercial Times - Reporter I have two questions. First, Chairman Liu previously mentioned that Foxconn’s AI server production capacity has reached about 1,000 racks per week, with a target to reach 2,000 racks per week this year. Could you share when the company expects to achieve this capacity level? And are there any additional shipment targets you can share beyond that?
+
+Second, regarding ASIC servers, recently TPU have been a hot topic in the industry. Could you share Foxconn’s level of participation in TPU projects in 2026, and what role the company expects to play in the TPU supply chain? Thank you.
+
+Young Liu Hon Hai Technology Group – Chairman Thank you. Regarding AI server capacity planning, we are steadily advancing our expansion plans. In particular, with the growing trend of manufacturing in the United States, we are investing significant resources to establish the US as our largest AI server production base. I believe that reaching a production capacity of 2,000 racks per week this year should not be a problem. Of course, actual shipment volumes will still depend on material supply conditions, so while the capacity itself should be achievable, shipment timing may vary depending on supply availability.
+
+Additionally, since each generation of customer products has different design specifications, shipment speeds may fluctuate slightly. However, we maintain very close communication with our customers. By leveraging our strengths in R&D, manufacturing, and vertical integration, we aim to ensure that production ramp-up aligns with our customers’ timelines.
+
+Regarding TPU, we do not comment on individual customer projects. However, we have been deeply involved in ASIC server development with major US CSP customers for many years, and we have accumulated extensive experience across the entire product stack, including components, modules, servers, and full rack integration. This year, we will gradually begin launching liquid-cooled ASIC server projects.
+
+For both GPU and ASIC customized platforms, our goal is to participate comprehensively across the entire value chain. Depending on the characteristics of each project, we may take on different roles across areas such as module design, board-level integration, rack- level system integration, system testing and validation. Through these capabilities, we
+
+support customers in mass production ramp-up and rack-level deployment services.
+
+As our production capacity continues expanding across US and Europe, our ability to provide global supply and localized delivery for ASIC server projects will further strengthen. This will help establish a stronger foundation for future market share growth and revenue expansion.
+
+For 2025, we expect ASIC server revenue to grow more than 100% YoY, driven by continued expansion in demand from CSP customers, we expect our ASIC server business to maintain multiple-fold growth momentum in 2026.
+
+James Wu Hon Hai Technology Group – Spokesperson Next question comes from Sharon from Morgan Stanley, please.
+
+Sharon Shih Morgan Stanley - Analyst Hi Chairman, CFO, and James. This is Sharon. I have two questions: one related to financials, and another related to smart consumer electronics.
+
+First, regarding the financials, by the end of last year, we saw that inventory increased by more than 30% YoY. Could you help us understand whether this increase was mainly due to raw material preparation, or was it more related to work-in-progress or finished goods for smartphones? In addition, we noticed that the tax rate increased significantly in the fourth quarter. What should we expect for the tax rate outlook in 2026?
+
+Second, regarding the consumer electronics business, the company mentioned that revenue this year is expected to show significant growth. However, many raw material prices, including memory, have been rising this year. Could you help clarify whether the expected growth in consumer electronics revenue is mainly driven by higher product ASP, or whether it is more related to stronger shipment volumes? Also, customers appear to be introducing new product cycles aimed at smoothing seasonal fluctuations. Has this trend created operational benefits for Foxconn as a key manufacturing partner? Thank you.
+
+James Wu Hon Hai Technology Group – Spokesperson We will first ask the Chairman to respond to the smart consumer electronics question, and then ask the CFO to address the inventory and working capital questions.
+
+Young Liu Hon Hai Technology Group – Chairman Regarding smartphone products, what we are seeing is primarily growth in shipment volumes, rather than just price increases. There is some impact from higher ASP, but the main driver is increasing unit volumes.
+
+Regarding seasonality, we are seeing that the introduction of new product launch cycles is gradually reducing seasonality. This change is actually very helpful for our R&D planning and production resource allocation, allowing us to better align with our customers’ demand.
+
+Because we work very closely with our customers during the new product introduction phase, we are deeply involved from the early stages of product development. Combined with our large-scale manufacturing capacity, diversified component supply capabilities, and advantages in efficiency and cost, these strengths allow us to maintain our leading market share. These capabilities represent over 50 years of accumulated expertise at Foxconn, forming a very strong competitive moat.
+
+In terms of product diversification, we are also expanding across multiple product categories, including various smart consumer electronics products, the rapidly-growing server segment, future edge computing products, and long-term opportunities in EVs, and aerospace. Through these capabilities, we are able to provide one-stop services for our customers.
+
+Since last year, tariffs and geopolitical developments have created uncertainties for global supply chains. However, these changes have also highlighted our advantages in global manufacturing and supply chain deployment. We help customers configure global production capacity, enhancing supply chain resilience. Because of this, we believe that we continue to be an indispensable long-term partner for our customers.
+
+David Huang Hon Hai Technology Group – CFO Thank you, Chairman, and thank you Sharon for the question. Regarding inventory, you mentioned that it increased around 30% YoY by the end of the year. However, if you look at inventory turnover days, the change is actually quite limited, because our revenue also increased significantly.
+
+For inventory management, we dynamically adjust our material preparation and production schedules through demand forecasts from key customers and close collaboration with supply chain partners. This allows us to manage working capital efficiently while supporting business growth. At present, our overall inventory level remains within a controllable range.
+
+We are also continuously optimizing the inventory structure, improving turnover efficiency in order to reduce inventory risk and enhance capital utilization.
+
+In our day-to-day management, the Chairman has repeatedly emphasized that inventory represents one of the most significant risks for any company. Therefore, we monitor inventory levels on a weekly basis. If any abnormal situation is identified, we immediately investigate the cause, trace it back to upstream operational factors, and implement corrective measures. Our ultimate goal is to ensure that inventory returns to a normal level, thereby reducing the demand for working capital. However, the core objective is fundamentally risk management.
+
+In terms of transaction models, when necessary, we may also discuss with customers the possibility of shifting from a buy and sell model to a consignment model, which can help reduce inventory levels. That said, regardless of which model is used, the majority of inventory we hold is governed by contractual agreements, under which the inventory is essentially the responsibility of our customers. At the end-of-life stage, customers are obligated to repurchase these inventories. Therefore, overall inventory risk remains controllable.
+
+Regarding the tax rate, there are three main structural factors affecting it: the implementation of Controlled Foreign Corporation (CFC) rules in Taiwan, the global Pillar Two minimum tax framework, and the repatriation of overseas operating earnings. Due to these structural changes, our effective tax rate, which historically averaged around 20%, is expected to increase to approximately 24%–26%.
+
+James Wu Hon Hai Technology Group – Spokesperson Thank you. The current time in Taiwan is 4:03 p.m., and on the West Coast it is 1:03 a.m. As the Chairman mentioned earlier, NVIDIA’s GTC conference will officially begin in a few hours. The Chairman has led a delegation from Foxconn to attend this year’s event.
+
+At this year’s GTC, we are showcasing several of our latest technologies, including our latest Vera Rubin NVL72 rack solution, as well as various vertically integrated components such as liquid cooling solutions, networking, and CPO. In addition, we are also demonstrating our latest humanoid robots.
+
+If any investors happen to be nearby, we warmly welcome you to visit our booth at the exhibition, where our IR colleagues will be happy to provide further introductions. If you have any additional questions, please feel free to contact our team at any time.
+
+Above is all of the content for our investor’s conference this time. We will end our conference here. Thank you everyone, good bye.
+
+Disclaimer This English version is a non-verbatim translation of Mandarin transcript for reference only. Hon Hai Precision Industry Co., Ltd. (the “Company”) reserves the right to make changes to content, or other information in this document without obligation to notify any person of such changes. In the conference call upon which this transcript is based, the Company may make projections or other forward-looking statements regarding a variety of items. Such forward-looking statements are based upon current expectations and involve risks and uncertainties. Actual results may differ materially from those stated in any forward-looking statement based on a number of important factors and risks. Although the Company may indicate and believe that the assumptions underlying the forward-looking statements are reasonable, any of the assumptions could prove inaccurate or incorrect and, therefore, there can be no assurance that the results contemplated in the forward-looking statements will be realized. THE INFORMATION CONTAINED IN THIS TRANSCRIPT IS A TEXTUAL REPRESENTATION OF THE COMPANY'S CONFERENCE CALL AND WHILE EFFORTS ARE MADE TO PROVIDE AN ACCURATE TRANSCRIPTION, THERE MAY BE MATERIAL ERRORS, OMISSIONS, OR INACCURACIES IN THE REPORTING OF THE SUBSTANCE OF THE CONFERENCE CALLS. IN NO WAY DOES THE COMPANY ASSUME ANY RESPONSIBILITY FOR ANY INVESTMENT OR OTHER DECISIONS MADE BASED UPON THE INFORMATION PROVIDED IN ANY TRANSCRIPT.

@@ -32,7 +32,7 @@ class Settings(BaseSettings):
 
     # Gemini (required for chat + insights + fallback)
     GEMINI_API_KEY: str = ""
-    GEMINI_MODEL: str = "gemini-2.0-flash"
+    GEMINI_MODEL: str = "gemini-2.5-flash"
 
     # Paths
     PRECOMPUTED_ROOT: Path = Path("..")

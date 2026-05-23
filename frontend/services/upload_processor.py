@@ -13,7 +13,13 @@ import json
 import logging
 from typing import Awaitable, Callable
 
-from adapters import enhong_adapter, haocheng_adapter, jincing_adapter, yining_adapter
+from adapters import (
+    enhong_adapter,
+    haocheng_adapter,
+    jincing_adapter,
+    mengcheng_adapter,
+    yining_adapter,
+)
 from config import get_settings
 from services.job_store import JobStatus, JobStore
 
@@ -68,6 +74,16 @@ async def process_upload(
         store.update(job_id, status=JobStatus.RUNNING, step=step)
 
     try:
+        # Auto-detect raw ASR and run 孟諴 preprocessing first if so.
+        # `is_raw_asr` is cheap (linear scan); the LLM call only fires when needed.
+        if mengcheng_adapter.is_raw_asr(full_text):
+            _set("preprocessing")
+            log.info("Raw ASR detected for slug=%s; running 孟諴 preprocessing.", slug)
+            full_text, qna_text = await asyncio.to_thread(mengcheng_adapter.run, full_text)
+            status["mengcheng"] = {"ok": True, "applied": True}
+        else:
+            status["mengcheng"] = {"ok": True, "applied": False, "reason": "input already clean"}
+
         _set("translating")
         full_json, qna_json = await asyncio.to_thread(
             enhong_adapter.run,

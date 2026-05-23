@@ -66,7 +66,7 @@ Edit `frontend/.env` (copy from `.env.example`). The keys fall into four buckets
 | `AZURE_OPENAI_*` | Q&A extraction during upload | **Optional** — if blank, Gemini handles Q&A extraction (see spec §8.6) |
 | `AZURE_TRANSLATOR_KEY`, `AZURE_TRANSLATOR_REGION` | Translation during upload | Required for upload |
 | `AZURE_LANGUAGE_KEY`, `AZURE_LANGUAGE_ENDPOINT` | Sentiment + keyphrase + PII summary | Required for upload |
-| `GEMINI_API_KEY`, `GEMINI_MODEL` | Chat + LLM insights headline + Q&A fallback | Recommended; default model `gemini-2.5-flash` |
+| `GEMINI_API_KEY`, `GEMINI_MODEL` | Preprocessing (raw ASR) + chat + LLM insights headline + Q&A fallback | Recommended; default model `gemini-2.5-flash` (free-tier eligible). Free tier is 20 req/day per key — see Troubleshooting if you hit a quota error. |
 
 You can also override:
 
@@ -88,8 +88,9 @@ You can also override:
 ### Upload a new transcript
 1. From `/`, drag a `.docx` into the upload form (optional separate Q&A-only `.docx`)
 2. Give it a case name (e.g. `nvda-2026q1`)
-3. Wait ~90 seconds for the pipeline to finish:
-   `translating → scoring → sentiment → keyphrase → summary → done`
+3. Wait ~90 seconds for the pipeline to finish. Stages are reported via SSE:
+   `[preprocessing] → translating → scoring → sentiment → keyphrase → summary → done`
+   `preprocessing` only fires when the input is raw ASR (no punctuation / no speaker turns); polished `.docx` skips straight to `translating`.
 4. Browser lands on `/case/<slug>` with all five panels populated
 5. Output bundle is saved at `frontend/data/cache/<slug>/`
 
@@ -137,7 +138,8 @@ External APIs are mocked everywhere in the suite — no Azure or Gemini quota is
 | Symptom | Fix |
 |---|---|
 | `Cannot create a GUI FigureManager outside the main thread using the MacOS backend` | Already handled — `adapters/haocheng_adapter.py` forces `matplotlib.use("agg")` at import. Reinstall if you pulled. |
-| Gemini 429 `limit: 0, model: gemini-2.0-flash` | Switch `GEMINI_MODEL` to `gemini-2.5-flash` (free-tier eligible) or enable billing on the Google Cloud project tied to the key. |
+| Gemini 429 `limit: 0, model: gemini-2.0-flash` | The legacy `gemini-2.0-flash` model is no longer on the free tier. Default is now `gemini-2.5-flash`; if you customised `.env`, switch back, or enable billing on the Google Cloud project tied to the key. |
+| `ModuleNotFoundError: google.genai` on first raw-ASR upload | The new Gemini SDK is bundled as a separate package (`google-genai`). Re-run `pip install -e .` from `frontend/` to pick it up after pulling. |
 | Pipeline emits `SystemExit: 沒有讀到任何 Q&A` | The Q&A extractor returned zero pairs (rate-limit, wrong model, or 0-byte input). Check `data/cache/<slug>/status.json` for per-module errors. |
 | Dashboard shows score `0/100` and empty radar | Pre-computed JSON files are missing for that case. Run the team pipeline or re-upload. |
 | Chat shows `(未啟用 LLM 對話)` | `GEMINI_API_KEY` is blank in `.env`. |

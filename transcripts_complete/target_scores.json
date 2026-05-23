@@ -1,0 +1,34 @@
+{
+  "_note": "Target scores established by 5 Opus agents grading complete transcripts. Higher-=-better axes (直接性/具體性/一致性) shown as-is. 迴避度 and 語氣落差 stored as the FRAMEWORK convention (high=worse), derived from 100 - agent_transparency_score.",
+  "_composite_formula": "綜合透明度 = (直接性 + 具體性 + (100-迴避度) + (100-語氣落差) + 一致性) / 5",
+  "tsmc": {"直接性": 78, "具體性": 74, "迴避度": 18, "語氣落差": 12, "一致性": 86, "綜合透明度_target": 82},
+  "nvda": {"直接性": 73, "具體性": 82, "迴避度": 24, "語氣落差": 13, "一致性": 88, "綜合透明度_target": 81},
+  "foxconn": {"直接性": 80, "具體性": 83, "迴避度": 22, "語氣落差": 18, "一致性": 84, "綜合透明度_target": 81},
+  "agent_reasoning": {
+    "直接性": {
+      "tsmc": "Most answers address questions with concrete specifics (N3 margin, CapEx drivers, capacity timing), though pricing and SoIC-timing questions get deflected.",
+      "nvda": "Jensen reliably connects answers to questions but often pivots into broad thematic 'compute equals revenues' narratives.",
+      "foxconn": "Pre-submitted and live Q&A deliver concrete numbers (40% AI share, 30%+ CapEx growth, 80/20 GPU/ASIC mix) directly tied to what was asked."
+    },
+    "具體性": {
+      "tsmc": "Wendell Huang's CFO answers are dense with hard numbers; C.C. Wei dilutes with qualitative responses.",
+      "nvda": "Q&A and prepared remarks saturated with hard data ($68B revenue, $11B Networking, 9GW Blackwell, $700B hyperscaler CapEx).",
+      "foxconn": "Consistent concrete signals throughout (NT$7.2 dividend, 52.9% payout, 24-26% tax rate)."
+    },
+    "迴避度_inverse": {
+      "tsmc": "C.C. Wei directly engages competition; standard IR hedging on customer/product names only.",
+      "nvda": "Jensen pivots hard sustainability questions into architecture narratives; Colette softer deflection on buyback.",
+      "foxconn": "Concrete numbers on dividends, tax, capacity, inventory; standard deflection on customer-specific projects."
+    },
+    "語氣落差_inverse": {
+      "tsmc": "Prep + Q&A both convey high-confidence bullish tone; C.C. Wei consistently assertive across both.",
+      "nvda": "Jensen + Colette maintain evangelical, supply-constrained-but-confident register throughout.",
+      "foxconn": "Measured-positive tone in prep carries into Q&A; CFO openly addresses margin/tax already flagged."
+    },
+    "一致性": {
+      "tsmc": "Q&A tightly reinforces every prep theme — N3/AI, high-end CapEx, 30%+ growth, margins.",
+      "nvda": "Mantras (compute=revenues, agentic AI, Blackwell/Rubin, $700B CapEx) echoed almost verbatim.",
+      "foxconn": "AI rack doubling, 40% share, 3%+ margin, vertical integration consistent across all answers."
+    }
+  }
+}

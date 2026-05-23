@@ -61,6 +61,15 @@ config.ini
 frontend/data/cache/
 
 # =====================
+# Local dev / scratch artifacts
+# =====================
+.diagram_mockups/
+.e2e_screenshots/
+~$*
+# parallel-dev copy of 浩誠 module — main scoring lives in 浩誠_回答品質評分/
+浩誠_回答品質評分 2/
+
+# =====================
 # Build / dependency artifacts
 # =====================
 node_modules/
