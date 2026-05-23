@@ -35,7 +35,7 @@
 
 <section class="space-y-3 mt-10">
   <h2 class="font-serif text-2xl text-ink">上傳逐字稿</h2>
-  <form action="/upload" method="post" enctype="multipart/form-data"
+  <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data"
         class="bg-surface border border-line rounded-lg p-6 space-y-3">
     <label class="block text-sm text-ink">完整逐字稿 (.docx)
       <input type="file" name="full_docx" accept=".docx" required
@@ -49,7 +49,113 @@
       <input type="text" name="case_name" placeholder="e.g. tsmc-2026q2"
              class="block mt-1 w-full px-3 py-2 border border-line rounded text-sm">
     </label>
-    <button class="bg-ink text-white px-4 py-2 rounded text-sm font-medium">上傳並開始分析</button>
+    <button id="upload-submit" type="submit"
+            class="bg-ink text-white px-4 py-2 rounded text-sm font-medium">上傳並開始分析</button>
   </form>
+
+  <div id="upload-progress" class="hidden bg-surface border border-line rounded-lg p-6 space-y-3">
+    <div class="flex items-center gap-3">
+      <span id="upload-spinner" class="inline-block w-4 h-4 border-2 border-accent border-t-transparent rounded-full animate-spin"></span>
+      <span id="upload-stage-text" class="text-sm text-ink">準備上傳…</span>
+    </div>
+    <ol id="upload-stage-list" class="text-xs text-muted space-y-1 ml-7"></ol>
+    <p id="upload-slug-hint" class="text-xs text-muted hidden"></p>
+    <p id="upload-error" class="hidden text-sm text-risk-evasive-ink bg-risk-evasive-bg rounded px-3 py-2"></p>
+  </div>
 </section>
+
+<script>
+(() => {
+  const STAGE_LABELS = {
+    preprocessing: "① 前處理 — 清理 ASR、語者切段",
+    translating:   "② 翻譯 + Q&A 擷取 — Azure Translator + LLM",
+    scoring:       "③ 回答品質評分 — 五維 + 綜合透明度",
+    sentiment:     "④ 情緒分析",
+    keyphrase:     "⑤ 關鍵字擷取",
+    summary:       "⑥ 重點摘要與 PII 遮罩",
+    done:          "✓ 完成，正在開啟儀表板…",
+    failed:        "✗ 處理失敗",
+  };
+  const STAGES = ["preprocessing","translating","scoring","sentiment","keyphrase","summary"];
+
+  const form        = document.getElementById("upload-form");
+  const submitBtn   = document.getElementById("upload-submit");
+  const progressBox = document.getElementById("upload-progress");
+  const stageText   = document.getElementById("upload-stage-text");
+  const stageList   = document.getElementById("upload-stage-list");
+  const slugHint    = document.getElementById("upload-slug-hint");
+  const errorBox    = document.getElementById("upload-error");
+  const spinner     = document.getElementById("upload-spinner");
+
+  if (!form) return;
+
+  function showProgress() {
+    form.classList.add("hidden");
+    progressBox.classList.remove("hidden");
+  }
+  function showError(msg) {
+    spinner.classList.add("hidden");
+    errorBox.textContent = "處理失敗：" + msg + "  ·  請重新整理頁面再試一次。";
+    errorBox.classList.remove("hidden");
+  }
+  function renderStages(currentStep) {
+    stageList.innerHTML = "";
+    let pastCurrent = false;
+    for (const s of STAGES) {
+      const li = document.createElement("li");
+      let mark = "○ ";
+      if (s === currentStep)        { mark = "▸ "; pastCurrent = true; }
+      else if (!pastCurrent)        { mark = "● "; }
+      li.textContent = mark + (STAGE_LABELS[s] || s);
+      li.className = (s === currentStep) ? "text-ink font-medium" :
+                     (!pastCurrent)      ? "text-accent" : "text-muted";
+      stageList.appendChild(li);
+    }
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = "上傳中…";
+    showProgress();
+    stageText.textContent = "上傳檔案中…";
+
+    let jobId, slug;
+    try {
+      const resp = await fetch("/upload", { method: "POST", body: new FormData(form) });
+      if (!resp.ok) throw new Error(`/upload returned HTTP ${resp.status}`);
+      const data = await resp.json();
+      jobId = data.job_id; slug = data.slug;
+      slugHint.textContent = `案件編號：${slug}`;
+      slugHint.classList.remove("hidden");
+    } catch (err) {
+      showError(err.message || String(err));
+      return;
+    }
+
+    const es = new EventSource(`/sse/job/${jobId}`);
+    es.onmessage = (ev) => {
+      let payload;
+      try { payload = JSON.parse(ev.data); } catch { return; }
+      const step = payload.step || "";
+      const status = payload.status || "";
+      stageText.textContent = STAGE_LABELS[step] || `${status} · ${step}`;
+      renderStages(step);
+
+      if (status === "done") {
+        es.close();
+        stageText.textContent = STAGE_LABELS.done;
+        setTimeout(() => { window.location.href = `/case/${slug}`; }, 800);
+      } else if (status === "failed") {
+        es.close();
+        showError(payload.error || `pipeline failed at step "${step}"`);
+      }
+    };
+    es.onerror = () => {
+      // SSE retries are automatic; only surface a hard error after several drops.
+      // We deliberately don't close the stream here.
+    };
+  });
+})();
+</script>
 {% endblock %}
