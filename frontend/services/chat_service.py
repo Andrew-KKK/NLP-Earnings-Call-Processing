@@ -68,7 +68,14 @@ async def stream_chat(
     try:
         resp = client.generate_content(contents, stream=True)
         for chunk in resp:
-            text = getattr(chunk, "text", "") or ""
+            try:
+                text = chunk.text or ""
+            except (ValueError, AttributeError):
+                # A streamed chunk with no content Part (e.g. the final chunk
+                # carrying only finish_reason=STOP) makes the `.text` quick
+                # accessor raise ValueError. That's benign end-of-stream — skip
+                # it rather than surfacing it as a chat error.
+                continue
             if text:
                 yield text
     except Exception as exc:  # noqa: BLE001

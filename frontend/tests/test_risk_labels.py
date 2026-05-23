@@ -1,7 +1,27 @@
 import pytest
 
 from services.risk_labels import RiskLabel, derive_risk_label
-from services.risk_labels import composite_score
+from services.risk_labels import composite_score, radar_axes
+
+
+def test_radar_axes_all_count_up():
+    """迴避度/語氣落差 must be flipped + renamed so all five axes count up."""
+    scores = {"直接性": 70.9, "具體性": 59.8, "迴避度": 15.5, "語氣落差": 10.0, "一致性": 79.0}
+    radar = radar_axes(scores)
+    assert list(radar.keys()) == ["直接性", "具體性", "坦誠度", "語氣穩定", "一致性"]
+    assert "迴避度" not in radar and "語氣落差" not in radar
+    assert radar["坦誠度"] == pytest.approx(84.5)   # 100 - 15.5
+    assert radar["語氣穩定"] == pytest.approx(90.0)  # 100 - 10.0
+    assert radar["直接性"] == pytest.approx(70.9)    # unchanged
+    # every axis is now "outer = better": a clean call sits high on all five
+    assert all(0.0 <= v <= 100.0 for v in radar.values())
+    assert min(radar.values()) >= 59.0
+
+
+def test_radar_axes_missing_badness_axis_is_neutral_not_perfect():
+    radar = radar_axes({"直接性": 80.0})
+    assert radar["坦誠度"] == pytest.approx(50.0)   # missing 迴避度 → 50, not 100
+    assert radar["語氣穩定"] == pytest.approx(50.0)
 
 
 def _sig(**overrides):

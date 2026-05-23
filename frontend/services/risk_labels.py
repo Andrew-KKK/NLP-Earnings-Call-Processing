@@ -76,3 +76,28 @@ def tone_pill(tone_shift_flag: bool) -> dict[str, str]:
     if tone_shift_flag:
         return {"text": "⚠ 語氣轉趨保守", "variant": "shifted"}
     return {"text": "● 語氣平穩", "variant": "stable"}
+
+
+def radar_axes(scores: Mapping[str, float]) -> dict[str, float]:
+    """Five radar axes, all oriented higher = better (0-100, outer = more transparent).
+
+    The 浩誠 scoring module emits 迴避度 / 語氣落差 as "higher = worse" axes
+    (more evasion / bigger tone gap). The composite 綜合透明度 already folds them
+    in as ``100 − score`` (see 浩誠_回答品質評分/metrics.py:composite_transparency_score);
+    here we apply the same flip for the radar so a transparent call reads as a
+    large, even pentagon instead of being pinched on those two spokes. Renamed
+    to 坦誠度 / 語氣穩定 to match the now-positive direction.
+
+    Missing badness axes default to 50 (→ 50 after flip = neutral), never to a
+    falsely-perfect 100.
+    """
+    def _clip(x: float) -> float:
+        return max(0.0, min(100.0, x))
+
+    return {
+        "直接性": _clip(float(scores.get("直接性", 0.0))),
+        "具體性": _clip(float(scores.get("具體性", 0.0))),
+        "坦誠度": _clip(100.0 - float(scores.get("迴避度", 50.0))),
+        "語氣穩定": _clip(100.0 - float(scores.get("語氣落差", 50.0))),
+        "一致性": _clip(float(scores.get("一致性", 0.0))),
+    }

@@ -19,6 +19,7 @@ from services.risk_labels import (
     composite_score,
     derive_risk_label,
     derive_topic,
+    radar_axes,
     tone_pill,
 )
 
@@ -132,7 +133,7 @@ def preview(request: Request, slug: str = "tsmc"):
     tone_row = (tone_shift_payload.get("tone_shift_results") or [{}])[0]
     rule = _rule_list(bundle, bool(tone_row.get("tone_shift_flag")), float(tone_row.get("negative_score_shift") or 0.0))
 
-    radar = {k: bundle.scores.get(k, 0) for k in ("直接性", "具體性", "迴避度", "語氣落差", "一致性")}
+    radar = radar_axes(bundle.scores)
 
     headline = (
         f"{bundle.display_name} 本場法說會綜合透明度為 {bundle.transparency:.0f}/100，"

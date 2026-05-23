@@ -16,6 +16,7 @@ from services.insights_composer import (
     compose_rule_list,
 )
 from services.precomputed_loader import load_case_bundle
+from services.risk_labels import radar_axes
 
 router = APIRouter()
 TEMPLATES = Jinja2Templates(directory=str(Path(__file__).resolve().parent.parent / "templates"))
@@ -77,7 +78,7 @@ def dashboard(request: Request, slug: str):
         model=settings.GEMINI_MODEL,
     )
 
-    radar = {k: bundle.scores.get(k, 0) for k in ("直接性", "具體性", "迴避度", "語氣落差", "一致性")}
+    radar = radar_axes(bundle.scores)
     return TEMPLATES.TemplateResponse(
         request,
         "dashboard.html",
