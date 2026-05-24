@@ -14,6 +14,18 @@
       </div>
     </section>
 
+    <!-- 法說會重點摘要 -->
+    {% if bundle.full_summary %}
+    <section id="summary" class="bg-surface border border-line rounded-lg p-5">
+      <div class="text-xs uppercase tracking-widest text-muted mb-3">法說會重點摘要</div>
+      <ul class="list-disc pl-5 space-y-1.5 text-sm text-ink leading-relaxed">
+        {% for sentence in bundle.full_summary %}
+        <li>{{ sentence }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
     <!-- Radar + Insights -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div id="radar" class="bg-surface border border-line rounded-lg p-5">

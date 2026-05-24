@@ -26,6 +26,7 @@ class CaseInfo:
     sentiment_dir: Path
     keyphrase_dir: Path
     pii_summary_json: Path
+    full_summary_json: Path
 
     def all_files_exist(self) -> bool:
         return self.qna_json.exists() and self.full_json.exists()
@@ -68,6 +69,7 @@ def _discover_precomputed(root: Path) -> list[CaseInfo]:
                 sentiment_dir=jincing_sent / slug,
                 keyphrase_dir=jincing_kp / slug,
                 pii_summary_json=yining / f"{slug}_extracted_qna_translation_pii_summary.json",
+                full_summary_json=yining / f"{slug}_full_transcript_translation_pii_summary.json",
             )
         )
     return out
@@ -91,6 +93,7 @@ def _discover_uploaded(cache: Path) -> list[CaseInfo]:
                 sentiment_dir=case_dir,
                 keyphrase_dir=case_dir,
                 pii_summary_json=case_dir / "pii_summary.json",
+                full_summary_json=case_dir / "pii_summary_full.json",
             )
         )
     return out

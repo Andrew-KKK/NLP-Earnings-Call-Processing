@@ -1,7 +1,22 @@
 import pytest
 
 from services.case_registry import find_case
-from services.precomputed_loader import load_case_bundle
+from services.precomputed_loader import load_case_bundle, _clean_summary
+
+
+def test_clean_summary_filters_placeholders_and_blanks():
+    assert _clean_summary({"summary": ["S1"]}) == []          # bare placeholder id
+    assert _clean_summary({"summary": ["  ", "S2", "真正的摘要句。"]}) == ["真正的摘要句。"]
+    assert _clean_summary({"summary": []}) == []
+    assert _clean_summary(None) == []
+    assert _clean_summary({}) == []
+
+
+def test_full_summary_loaded_and_clean_for_foxconn():
+    bundle = load_case_bundle(find_case("foxconn"))
+    assert isinstance(bundle.full_summary, list)
+    assert len(bundle.full_summary) >= 1
+    assert all(isinstance(s, str) and s.strip() for s in bundle.full_summary)
 
 
 @pytest.mark.parametrize("slug", ["tsmc", "nvda", "foxconn"])

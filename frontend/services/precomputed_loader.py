@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -17,6 +18,26 @@ def _read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+# Placeholder sentence-ids the summary engine emits when it produces nothing
+# real (e.g. ["S1"]) — treat as empty rather than rendering them.
+_SUMMARY_PLACEHOLDER_RE = re.compile(r"^[A-Za-z]\d*$")
+
+
+def _clean_summary(payload: Any) -> list[str]:
+    """Extract display-ready summary sentences, dropping blanks/placeholders."""
+    if not isinstance(payload, dict):
+        return []
+    out: list[str] = []
+    for item in payload.get("summary") or []:
+        if not isinstance(item, str):
+            continue
+        s = item.strip()
+        if not s or _SUMMARY_PLACEHOLDER_RE.match(s):
+            continue
+        out.append(s)
+    return out
+
+
 @dataclass
 class CaseBundle:
     slug: str
@@ -25,6 +46,7 @@ class CaseBundle:
     scores: dict[str, float]
     tone_pill: dict[str, str]
     qna_rows: list[dict[str, Any]]
+    full_summary: list[str] = field(default_factory=list)
     raw: dict[str, Any] = field(default_factory=dict)
 
     @property
@@ -39,6 +61,8 @@ def load_case_bundle(info: CaseInfo) -> CaseBundle:
     kp_payload = _read_json(info.keyphrase_dir / "qna_keyphrase_summary.json") or {"qna_results": []}
     tone_shift = _read_json(info.sentiment_dir / "company_tone_shift_summary.json") or {"tone_shift_results": [{}]}
     pii_payload = _read_json(info.pii_summary_json) or {"summary": []}
+    full_summary_payload = _read_json(info.full_summary_json)
+    full_summary = _clean_summary(full_summary_payload)
 
     sent_by_pair = {int(float(r["pair_id"])): r for r in sent_payload.get("qna_results", []) if r.get("pair_id") is not None}
     kp_by_pair = {int(float(r["pair_id"])): r for r in kp_payload.get("qna_results", []) if r.get("pair_id") is not None}
@@ -87,6 +111,7 @@ def load_case_bundle(info: CaseInfo) -> CaseBundle:
         scores=scores,
         tone_pill=pill,
         qna_rows=qna_rows,
+        full_summary=full_summary,
         raw={
             "qna": qna_payload,
             "sentiment": sent_payload,
